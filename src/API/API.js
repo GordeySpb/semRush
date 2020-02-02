@@ -1,9 +1,7 @@
-/* eslint-disable */
-
 /**
  * method for auth in app
  */
-
+/* eslint-disable */
 export const auth = () => {
   return new Promise((resolve, reject) => {
     VK.Auth.login(({ session, status }) => {
@@ -28,7 +26,7 @@ export const logout = () => {
   });
 };
 
-/**metod for work with vk api
+/**method for work with vk api
  *
  * @param {String} param.method method name
  * @param {Object} param.params options

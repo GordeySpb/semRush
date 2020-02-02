@@ -12,16 +12,16 @@ import styles from './friend.module.css';
  */
 
 export const Friend = ({ id, avatar, name, lastName }) => (
-  <li className={styles.item} key={id} id={id}>
+  <li className={styles.item} id={id}>
     <div className={styles.imgWrapper}>
-      <img className={styles.img} src={avatar} />
+      <img className={styles.img} src={avatar} alt="avatar" />
     </div>
     <div>{`${name} ${lastName}`}</div>
   </li>
 );
 
 Friend.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   avatar: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   lastName: PropTypes.string.isRequired,

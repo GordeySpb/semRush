@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 
+import { statuses } from '../../statuses';
 import { logout } from '../../API/API';
 import { Profile } from '../../components/Profile/Profile';
 import { Friend } from '../../components/Friend/Friend';
@@ -15,42 +16,50 @@ import styles from './user.module.css';
  */
 
 export const User = ({ history }) => {
-  const UNKNOW_STATUS = 'unknown';
   const [searchTerm, setSearchTerm] = useState('');
   const {
-    filtered,
-    friends,
-    user,
-    isFetching,
+    // filtered,
+    // friends,
+    // user,
+    // isFetching,
+    // setFriends,
+    // count,
     setFriends,
-    count,
+    state,
   } = useFetchUserData();
 
-  const handleChange = ({ target: { value } }) => {
-    setSearchTerm(value);
-  };
+  console.log(state);
 
-  const handleClick = () => {
-    const results = filtered.filter(({ first_name }) =>
+  const handleChange = useCallback(
+    ({ target: { value } }) => {
+      setSearchTerm(value);
+    },
+    [setSearchTerm]
+  );
+
+  const handleClick = useCallback(() => {
+    const results = state.filtered.filter(({ first_name }) =>
       first_name.toLowerCase().includes(searchTerm)
     );
     setFriends(results);
-  };
+  }, [state.filtered, searchTerm, setFriends]);
 
-  const handleLogout = async () => {
+  const handleLogout = useCallback(async () => {
     const status = await logout();
-    if (status === UNKNOW_STATUS) history.push('/');
-  };
+    if (status === statuses.unknown) {
+      history.push('/');
+    }
+  }, [history]);
 
   return (
     <div className={styles.container}>
-      {!isFetching && (
+      {!state.isFetching && (
         <div>
           <Profile
-            img={user.photo_200}
-            name={user.first_name}
-            lastName={user.last_name}
-            count={count}
+            img={state.user.photo_200}
+            name={state.user.first_name}
+            lastName={state.user.last_name}
+            count={state.count}
           />
 
           <Search
@@ -61,14 +70,15 @@ export const User = ({ history }) => {
 
           <div className={styles.listWrapper}>
             <ul className={styles.list}>
-              {!!friends.length &&
-                friends.map(friend => {
+              {!!state.friends.length &&
+                state.friends.map(friend => {
                   return (
                     <Friend
-                      id={friend.id}
-                      avatar={friend.photo_100}
-                      name={friend.first_name}
-                      lastName={friend.last_name}
+                      key={state.friend.id}
+                      id={state.friend.id}
+                      avatar={state.friend.photo_100}
+                      name={state.friend.first_name}
+                      lastName={state.friend.last_name}
                     />
                   );
                 })}

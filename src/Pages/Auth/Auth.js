@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 
+import { statuses } from '../../statuses';
 import { auth } from '../../API/API';
 import { Button } from '../../components/Button/Button';
 
@@ -11,16 +12,17 @@ import styles from './auth.module.css';
  */
 
 export const Auth = ({ history }) => {
-  const CONNECTED_STATUS = 'connected';
-
-  const handleClick = async () => {
+  const handleClick = useCallback(async () => {
     try {
       const status = await auth();
-      if (status === CONNECTED_STATUS) history.push('/user');
+      if (status === statuses.connecnted) {
+        history.push('/user');
+      }
     } catch (error) {
-      console.error(error);
+      throw new Error(error);
     }
-  };
+  });
+
   return (
     <div className={styles.auth}>
       <Button onClick={handleClick}>Login</Button>

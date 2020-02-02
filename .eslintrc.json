@@ -1,28 +1,32 @@
 {
-	"extends": "airbnb",
-	"parser": "babel-eslint",
+  "extends": "airbnb",
+  "parser": "babel-eslint",
 
-	"env": {
-		"node": true,
-		"browser": true
-	},
+  "env": {
+    "node": true,
+    "browser": true
+  },
 
-	"plugins": ["jsx-a11y"],
+  "plugins": ["jsx-a11y"],
 
-	"rules": {
-		"linebreak-style": 0,
-		"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-		"jsx-a11y/click-events-have-key-events": "off",
-		"import/prefer-default-export": "off",
-		"requireForBlockBody": true,
-		"no-shadow": [2, { "builtinGlobals": false, "hoist": "never", "allow": [] }],
-		"parser": "babel-eslint",
-		"prefer-const": [
-			"error",
-			{
-				"destructuring": "any",
-				"ignoreReadBeforeAssign": true
-			}
-		]
-	}
+  "rules": {
+    "linebreak-style": 0,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "jsx-a11y/click-events-have-key-events": "off",
+    "import/prefer-default-export": "off",
+    "requireForBlockBody": true,
+    "no-shadow": [
+      2,
+      { "builtinGlobals": false, "hoist": "never", "allow": [] }
+    ],
+    "parser": "babel-eslint",
+    "no-underscore-dangle": [2, { "allow": ["VK"] }],
+    "prefer-const": [
+      "error",
+      {
+        "destructuring": "any",
+        "ignoreReadBeforeAssign": true
+      }
+    ]
+  }
 }

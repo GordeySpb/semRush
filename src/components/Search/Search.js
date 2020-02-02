@@ -25,7 +25,7 @@ export const Search = ({ onChange, onClick, value }) => (
   </div>
 );
 
-Button.propTypes = {
+Search.propTypes = {
   value: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,

@@ -33,3 +33,10 @@ Profile.propTypes = {
   lastName: PropTypes.string.isRequired,
   count: PropTypes.number.isRequired,
 };
+
+Profile.defaultProps = {
+  img: '',
+  name: '',
+  lastName: '',
+  count: 0,
+};
