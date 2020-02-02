@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.ef75ce9c.chunk.css",
-    "main.js": "/static/js/main.86b4c20f.chunk.js",
-    "main.js.map": "/static/js/main.86b4c20f.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.727a590d.js",
-    "runtime-main.js.map": "/static/js/runtime-main.727a590d.js.map",
-    "static/css/2.764ccc25.chunk.css": "/static/css/2.764ccc25.chunk.css",
-    "static/js/2.f0cbad0c.chunk.js": "/static/js/2.f0cbad0c.chunk.js",
-    "static/js/2.f0cbad0c.chunk.js.map": "/static/js/2.f0cbad0c.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.58ed15ddcf9ae5ed80b74f7a367f9f22.js": "/precache-manifest.58ed15ddcf9ae5ed80b74f7a367f9f22.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.764ccc25.chunk.css.map": "/static/css/2.764ccc25.chunk.css.map",
-    "static/css/main.ef75ce9c.chunk.css.map": "/static/css/main.ef75ce9c.chunk.css.map",
-    "static/js/2.f0cbad0c.chunk.js.LICENSE": "/static/js/2.f0cbad0c.chunk.js.LICENSE"
+    "main.css": "/semRush/static/css/main.ef75ce9c.chunk.css",
+    "main.js": "/semRush/static/js/main.a0e685d7.chunk.js",
+    "main.js.map": "/semRush/static/js/main.a0e685d7.chunk.js.map",
+    "runtime-main.js": "/semRush/static/js/runtime-main.42e2009a.js",
+    "runtime-main.js.map": "/semRush/static/js/runtime-main.42e2009a.js.map",
+    "static/css/2.764ccc25.chunk.css": "/semRush/static/css/2.764ccc25.chunk.css",
+    "static/js/2.f0cbad0c.chunk.js": "/semRush/static/js/2.f0cbad0c.chunk.js",
+    "static/js/2.f0cbad0c.chunk.js.map": "/semRush/static/js/2.f0cbad0c.chunk.js.map",
+    "index.html": "/semRush/index.html",
+    "precache-manifest.6300ff03b578a75f2adb70056baf7bec.js": "/semRush/precache-manifest.6300ff03b578a75f2adb70056baf7bec.js",
+    "service-worker.js": "/semRush/service-worker.js",
+    "static/css/2.764ccc25.chunk.css.map": "/semRush/static/css/2.764ccc25.chunk.css.map",
+    "static/css/main.ef75ce9c.chunk.css.map": "/semRush/static/css/main.ef75ce9c.chunk.css.map",
+    "static/js/2.f0cbad0c.chunk.js.LICENSE": "/semRush/static/js/2.f0cbad0c.chunk.js.LICENSE"
   },
   "entrypoints": [
-    "static/js/runtime-main.727a590d.js",
+    "static/js/runtime-main.42e2009a.js",
     "static/css/2.764ccc25.chunk.css",
     "static/js/2.f0cbad0c.chunk.js",
     "static/css/main.ef75ce9c.chunk.css",
-    "static/js/main.86b4c20f.chunk.js"
+    "static/js/main.a0e685d7.chunk.js"
   ]
 }
