@@ -1,4 +1,5 @@
 import React, { useCallback } from 'react';
+import PropTypes from 'prop-types';
 
 import { statuses } from '../../statuses';
 import { auth } from '../../API/API';
@@ -28,4 +29,8 @@ export const Auth = ({ history }) => {
       <Button onClick={handleClick}>Login</Button>
     </div>
   );
+};
+
+Auth.propTypes = {
+  history: PropTypes.object.isRequired,
 };

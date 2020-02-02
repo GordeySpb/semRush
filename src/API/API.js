@@ -1,10 +1,10 @@
 /**
  * method for auth in app
  */
-/* eslint-disable */
+
 export const auth = () => {
   return new Promise((resolve, reject) => {
-    VK.Auth.login(({ session, status }) => {
+    window.VK.Auth.login(({ session, status }) => {
       if (session) {
         resolve(status);
       } else {
@@ -20,7 +20,7 @@ export const auth = () => {
 
 export const logout = () => {
   return new Promise((resolve, reject) => {
-    VK.Auth.logout(({ status }) => {
+    window.VK.Auth.logout(({ status }) => {
       resolve(status);
     });
   });
@@ -30,13 +30,14 @@ export const logout = () => {
  *
  * @param {String} param.method method name
  * @param {Object} param.params options
+ * @returns {Object} server response
  */
 
 export const callAPI = (method, params) => {
   params.v = '5.103';
 
   return new Promise((resolve, reject) => {
-    VK.api(method, params, data => {
+    window.VK.api(method, params, data => {
       if (data.error) {
         reject(data.error);
       } else {

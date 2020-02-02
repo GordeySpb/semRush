@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from 'react';
+import PropTypes from 'prop-types';
 
 import { statuses } from '../../statuses';
 import { logout } from '../../API/API';
@@ -18,17 +19,9 @@ import styles from './user.module.css';
 export const User = ({ history }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const {
-    // filtered,
-    // friends,
-    // user,
-    // isFetching,
-    // setFriends,
-    // count,
     setFriends,
-    state,
+    state: { filtered, user, count, isFetching, friends },
   } = useFetchUserData();
-
-  console.log(state);
 
   const handleChange = useCallback(
     ({ target: { value } }) => {
@@ -38,11 +31,11 @@ export const User = ({ history }) => {
   );
 
   const handleClick = useCallback(() => {
-    const results = state.filtered.filter(({ first_name }) =>
+    const results = filtered.filter(({ first_name }) =>
       first_name.toLowerCase().includes(searchTerm)
     );
     setFriends(results);
-  }, [state.filtered, searchTerm, setFriends]);
+  }, [filtered, searchTerm, setFriends]);
 
   const handleLogout = useCallback(async () => {
     const status = await logout();
@@ -53,13 +46,13 @@ export const User = ({ history }) => {
 
   return (
     <div className={styles.container}>
-      {!state.isFetching && (
+      {!isFetching && (
         <div>
           <Profile
-            img={state.user.photo_200}
-            name={state.user.first_name}
-            lastName={state.user.last_name}
-            count={state.count}
+            img={user.photo_200}
+            name={user.first_name}
+            lastName={user.last_name}
+            count={count}
           />
 
           <Search
@@ -70,15 +63,15 @@ export const User = ({ history }) => {
 
           <div className={styles.listWrapper}>
             <ul className={styles.list}>
-              {!!state.friends.length &&
-                state.friends.map(friend => {
+              {!!friends.length &&
+                friends.map(friend => {
                   return (
                     <Friend
-                      key={state.friend.id}
-                      id={state.friend.id}
-                      avatar={state.friend.photo_100}
-                      name={state.friend.first_name}
-                      lastName={state.friend.last_name}
+                      key={friend.id}
+                      id={friend.id}
+                      avatar={friend.photo_100}
+                      name={friend.first_name}
+                      lastName={friend.last_name}
                     />
                   );
                 })}
@@ -91,4 +84,8 @@ export const User = ({ history }) => {
       )}
     </div>
   );
+};
+
+User.propTypes = {
+  history: PropTypes.object.isRequired,
 };
