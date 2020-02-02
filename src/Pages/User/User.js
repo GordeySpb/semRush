@@ -32,7 +32,7 @@ export const User = ({ history }) => {
 
   const handleClick = useCallback(() => {
     const results = filtered.filter(({ first_name }) =>
-      first_name.toLowerCase().includes(searchTerm)
+      first_name.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setFriends(results);
   }, [filtered, searchTerm, setFriends]);
