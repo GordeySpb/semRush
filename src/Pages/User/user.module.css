@@ -1,0 +1,46 @@
+.container {
+  background-color: #fff;
+  max-width: 800px;
+  height: 100%;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.listWrapper {
+  padding: 0 100px;
+  height: 335px;
+  margin-bottom: 50px;
+}
+
+.list {
+  width: 100%;
+  height: auto;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  position: relative;
+}
+
+.logoutWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .listWrapper {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+@media (max-width: 767px) {
+  .listWrapper {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

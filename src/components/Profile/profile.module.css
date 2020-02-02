@@ -1,0 +1,26 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.imgContainer {
+  height: 100%;
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.img {
+  border-radius: 50%;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+}
+
+.name {
+  margin-right: 20px;
+}

@@ -1,0 +1,16 @@
+.item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.imgWrapper {
+  width: 70px;
+  height: 70px;
+  margin-right: 10px;
+}
+
+.img {
+  height: 100%;
+  border-radius: 50%;
+}
